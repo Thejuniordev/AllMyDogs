@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>My Dog App</title>
+
+    <meta name="description" content="My dogs App">
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css">
+    <script src="https://kit.fontawesome.com/46f87ba5ea.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" media="screen" type="text/css" href="assets/css/colorpicker.css" />
+
+
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="title__logo">My Dogs App</h1>
+        </div>
+    </header>
+    
+    <section class="mydogs">
+        <div class="container">
+            <div class="content flex">
+
+                <div class="content__dog">
+                    <button class="btn__default reset_button">Novo Dog</button>
+
+                    <div class="content__dog-select flex">
+                        <div class="search__select-dogs">
+                            <select name="myDog" id="myDog">
+                                <option value="default" selected hidden>Escolha o Dog</option>
+                            </select>
+                        </div>
+                        <div class="search__select-font">
+                            <select name="myFont" id="myFont">
+                                <option value="default" selected hidden>Escolha a fonte</option>
+                            </select>
+                        </div>
+                        <div class="search__select-name">
+                            <input type="text" class="dogname" placeholder="Insira o nome do dog">
+                        </div>
+                    </div>
+
+                    <div class="content__dog-color">
+                        <span class="title__color">Selecione a cor da fonte:</span>
+                        <input id="colorpicker" type="hidden">
+                    </div>
+
+                    <button type="button" class="save__dog btn__default">Salvar</button>
+                    <span class="save__msg-error">Por favor preencha os campos</span>
+                </div>
+
+                <div class="content__dog-results">
+                    <figure>
+                        <img src="./assets/images/retriever.png" alt="Meu dog Selecionado" class="content__dog-image">
+                        
+                    </figure>
+                    <h2 class="nome_dog" data-color="{dog-color}" data-font="{dog-font}">Nome do Dog</h2>
+                </div>
+
+            </div>
+            <div class="content__dog-history">
+                <ul class="card__dog-history flex flex-start flex-wrap">
+                    <li class="content__dog-resulted card__dog card__dog--example">
+                        <figure>
+                            <img src="./assets/images/retriever.png" alt="Meu dog Selecionado" class="">
+                        </figure>
+                        <h2 class="nome_dog-clone">Nome do Dog</h2>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CNDs -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <script type="text/javascript" src="js/colorpicker.js"></script>
+    <!-- Main JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

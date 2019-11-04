@@ -1,0 +1,300 @@
+@import 'base';
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 8;
+
+    .title__logo {
+        font-family: 'Lobster', cursive;
+        color: #fff;
+        font-size: 60px;
+        text-align: center;
+        padding: 10px 0;
+        @media (max-width: 500px){
+            font-size: 40px;
+        }
+    }
+    &.active{
+        background: #fff;
+        .title__logo {
+            color: #290a59;
+            font-size: 40px;
+            @media (max-width: 500px){
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+// End header
+
+.mydogs {
+    padding-top: 150px;
+    @media (max-width: 500px){
+        padding-top: 110px;
+    }
+
+    .content {
+        @media (max-width: 1024px){
+            flex-direction: column;
+        }
+        .content__dog {
+            width: 100%;
+
+            .btn__default {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            &-select {
+                margin-top: 40px;
+                @media (max-width: 760px){
+                    flex-direction: column;
+                }
+            }
+
+            &-results {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                max-width: 430px;
+                height: 450px;
+                background: rgba(255, 255, 255, 0.4);
+                border-radius: 20px;
+                margin: auto;
+                transition: all .3s ease;
+                @media (max-width: 1024px){
+                    margin: 30px auto;
+                }
+                @media (max-width: 500px){
+                    max-width: 300px;
+                    height: 300px;
+                }
+
+                figure {
+                    position: absolute;
+                    width: 100%;
+                    max-width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    background: #fff;
+                    overflow: hidden;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    @media (max-width: 500px){
+                        max-width: 200px;
+                        height: 200px;
+                    }
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+
+                .nome_dog {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #fff;
+                    font-size: 49px;
+                    width: 100%;
+                    text-align: center;
+                    @media (max-width: 500px){
+                        font-size: 29px;
+                    }
+                }
+            }
+
+            .search__select {
+               
+
+                &-dogs {
+                    width: 100%;
+                    margin: 0 5px;
+                    @media (max-width: 760px){
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &-font {
+                    width: 100%;
+                    margin: 0 5px;
+                    @media (max-width: 760px){
+                        margin-bottom: 20px;
+                    }
+                }
+
+                &-name {
+                    width: 100%;
+                    margin: 0 5px;
+                }
+            }
+
+            &-color {
+                padding: 40px 0 0;
+
+                @media (max-width: 768px){
+                    display: flex;
+                    justify-content: center;
+                    margin: 20px 0 50px;
+                }
+
+                .title__color {
+                    color: #fff;
+                    font-size: 25px;
+                }
+            }
+            span.save__msg-error {
+                color: #fff;
+                background: red;
+                padding: 10px;
+                border-radius: 6px;
+                display: block;
+                text-align: center;
+                margin: 30px auto;
+                width: 100%;
+                max-width: 300px;
+                display: none;
+
+                &--visible{
+                    display: block;
+                }
+            }
+        }
+
+        // End .content__dog
+
+    }
+
+    .content__dog-history {
+        position: absolute;
+        bottom: 30px;
+        left: 0;
+        width: 100%;
+        height: 300px;
+        @media (max-width: 1024px){
+            position: relative;
+            bottom: 0;
+            
+            .card__dog-history{
+                justify-content: center;
+            }
+        }
+
+        .content__dog-resulted {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            right: 180px;
+            background: #ffffff;
+            border-radius: 10px;
+            z-index: 2;
+
+            @media (max-width: 1024px){
+                right: 10px;
+            }
+            @media (max-width: 768px){
+                right: auto;
+            }
+            @media (max-width: 500px){
+                width: 280px;
+                height: 280px;
+            }
+            &:first-child{
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 10px;
+                    z-index: 0;
+                    top: -10px;
+                    left: 10px;
+                    @media (max-width: 500px){
+                        width: 280px;
+                        height: 280px;
+                    }
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    width: 300px;
+                    height: 300px;
+                    background: rgba(255, 255, 255, 0.5);
+                    border-radius: 10px;
+                    z-index: -1;
+                    top: -20px;
+                    left: 20px;
+                    @media (max-width: 500px){
+                        width: 280px;
+                        height: 280px;
+                    }
+                }
+    
+            }
+            
+            figure {
+                position: absolute;
+                width: 100%;
+                max-width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: #fff;
+                overflow: hidden;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            .nome_dog {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .nome_dog-clone{
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            &.open{
+                position: relative;
+                right: 0;
+                margin: 5px 20px;
+                &::before{
+                    display: none;
+                }
+                &::after{
+                    display: none;
+                }
+            }
+        }
+
+        // End .card__dog--example
+    }
+}
+
+//End mydogs
